@@ -1,18 +1,19 @@
 // Example
-var ourDog = {
-    "name": "Camper",
-    "legs": 4,
-    "tails": 1,
-    "friends": ["everything!"]
-  };
-  
-  // Only change code below this line.
+function ourRandomRange(ourMin, ourMax) {
 
-var myDog = {
-    name: "sniper",
-    "legs": "14",
-    tails: "2",
-    friends: 13
-};
+  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
 
-console.log(myDog["legs"]);
+ourRandomRange(1, 9);
+
+// Only change code below this line.
+
+function randomRange(myMin, myMax) {
+
+  return Math.floor(Math.random() * (myMax - myMin)) + myMin; // Change this line
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(5, 15);
+console.log(myRandom);
