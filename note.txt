@@ -1,0 +1,43 @@
+CoD: DL2J-8PY4-4Q22-GE48-88D2
+c0905411134	nuttertools1
+c0905411144	gatigun1
+w0905411144	Nuttertools0
+rynmi		01693086994
+Phuoccon2k	zxcZXC123
+luongancuoc	gatigun1
+
+homegroup
+ui5UK66wH2
+
+http://nhasachtinhoc.blogspot.com
+
+24 21
+
+
+*#06#
+604
+
+
+<xs:simpleType name="KHID" base="xs:string">
+                        <xs:pattern value="\s{3}\d{4}" />
+                    </xs:simpleType>
+
+
+
+
+Đưa mục dữ liệu i vao viewholder
+
+Duong dan project visual studio
+C:\Users\Hoang Anh\Documents\Visual Studio 2015\Projects
+	
+
+			"Index", "Calculator2", FormMethod.Post
+
+                Cong
+                @Html.RadioButtonFor(model => model.option, "add")
+                Tru
+                @Html.RadioButtonFor(model => model.option, "sub")
+                Nhan
+                @Html.RadioButtonFor(model => model.option, "mult")
+                Chia
+                @Html.RadioButtonFor(model => model.option, "div")
