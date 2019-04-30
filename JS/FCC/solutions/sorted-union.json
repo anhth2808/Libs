@@ -1,0 +1,1 @@
+{"index.js":"function uniteUnique(...arr) {\n    const result = [];\n\n    arr.map(e => {\n        e.map(m => {\n            if (!result.find( n => n === m)) {\n                result.push(m);\n            }\n        })\n    })\n  \n\n    return result;\n  }\n\nuniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);"}

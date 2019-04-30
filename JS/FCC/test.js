@@ -1,19 +1,19 @@
-// Example
-function ourRandomRange(ourMin, ourMax) {
-
-  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+function desArray(item, box) {
+    if (Array.isArray(item)){
+        item.map(i => {
+            desArray(i, box);
+        });
+    } else {
+        box.push(item);
+    }
 }
 
-ourRandomRange(1, 9);
 
-// Only change code below this line.
-
-function randomRange(myMin, myMax) {
-
-  return Math.floor(Math.random() * (myMax - myMin)) + myMin; // Change this line
-
+function steamrollArray(arr) {
+    // I'm a steamroller, baby
+    let box = []
+    desArray(arr, box);
+    return box;
 }
-
-// Change these values to test your function
-var myRandom = randomRange(5, 15);
-console.log(myRandom);
+  
+  steamrollArray([[["a"]], [["b"]]])

@@ -18,6 +18,8 @@ http://nhasachtinhoc.blogspot.com
 604
 
 
+thuthuy@ntu.edu.vn
+
 <xs:simpleType name="KHID" base="xs:string">
                         <xs:pattern value="\s{3}\d{4}" />
                     </xs:simpleType>

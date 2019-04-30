@@ -1,0 +1,1 @@
+{"index.js":"function desArray(item, box) {\n    if (Array.isArray(item)){\n        item.map(i => {\n            desArray(i, box);\n        });\n    } else {\n        box.push(item);\n    }\n}\n\n\nfunction steamrollArray(arr) {\n    // I'm a steamroller, baby\n    let box = []\n    desArray(arr, box);\n    return box;\n}\n\nsteamrollArray([1, [2], [3, [[4]]]]);"}
