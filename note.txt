@@ -43,3 +43,12 @@ C:\Users\Hoang Anh\Documents\Visual Studio 2015\Projects
                 @Html.RadioButtonFor(model => model.option, "mult")
                 Chia
                 @Html.RadioButtonFor(model => model.option, "div")
+
+// dataconnection in file config
+metadata=res://*/Models.QLNV.csdl|res://*/Models.QLNV.ssdl|res://*/Models.QLNV.msl;provider=System.Data.SqlClient;provider connection string="data source=HOANGANH-PC\SQLEXPRESS;initial catalog=QLNV;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+
+console
+System.Diagnostics.Debug.WriteLine(log data here)
+
+
+

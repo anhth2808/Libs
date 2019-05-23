@@ -1,0 +1,86 @@
+CREATE DATABASE HOTEL1
+GO
+USE HOTEL1
+GO
+CREATE TABLE ADMIN
+(
+  Admin_id nvarchar(20) PRIMARY KEY,
+  AdminName nvarchar(20) NOT NULL
+)
+CREATE TABLE CUSTOMER
+(
+  Customer_id nvarchar(20) PRIMARY KEY,
+  CustomerName nvarchar(20) NOT NULL,
+  CustomerTel nvarchar(20) NOT NULL,
+  CustomerEmail nvarchar(20)
+)
+GO
+CREATE TABLE ROOMTYPE
+(
+	RoomType_id nvarchar(20) PRIMARY KEY,
+	RType nvarchar(50) NOT NULL
+)
+GO
+CREATE TABLE ROOM
+(
+	Room_id nvarchar(20) PRIMARY KEY,
+  IsUsing bit default(0),
+  RoomType_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES ROOMTYPE(RoomType_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+)
+GO
+CREATE TABLE BOOKING
+(
+  Booking_id nvarchar(20) PRIMARY KEY,
+  Check_in_date date NOT NULL,
+  Check_out_date date NOT NULL,
+  Customer_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES CUSTOMER(Customer_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE,
+  Admin_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES ADMIN(Admin_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+)
+GO
+CREATE TABLE RENT
+(
+  Rent_id nvarchar(20) PRIMARY KEY,
+  Amount int NOT NULL,
+  IsActive bit DEFAULT(1),
+  From_Date date NOT NULL,
+  To_Date date,
+  RoomType_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES ROOMTYPE(RoomType_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+)
+GO
+CREATE TABLE PAYTYPE
+(
+  PayType_id nvarchar(20) PRIMARY KEY,
+  PType nvarchar(20) NOT NULL
+)
+GO
+CREATE TABLE BILLPAY
+(
+  BillPay_id nvarchar(20) PRIMARY KEY,
+  Date date NOT NULL,
+  PayType_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES PAYTYPE(PayType_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+)
+GO
+CREATE TABLE BILL
+(
+  Bill_id nvarchar(20) PRIMARY KEY,
+  Total int NOT NULL,
+  BillPay_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES BILLPAY(BillPay_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE,
+  Rent_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES RENT(Rent_id)
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION,
+  Booking_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES BOOKING(Booking_id)
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+)

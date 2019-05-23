@@ -1,19 +1,24 @@
-function desArray(item, box) {
-    if (Array.isArray(item)){
-        item.map(i => {
-            desArray(i, box);
-        });
-    } else {
-        box.push(item);
-    }
+// NV0000
+// PB0000
+// HDLD0000
+// CV0000
+
+function createId(type) {
+	// get lastItem
+	let lastItem = "CV0115";	
+    let reg = /[1-9]\d*/;
+    
+    // using regex to get number
+    lastItem = lastItem.match(reg)[0];
+    lastItem = parseInt(lastItem)    
+	lastItem++;
+	lastItem = lastItem.toString();
+
+	let result = lastItem;
+	for (let i = 0 ; i < (4 - lastItem.length); i++) {
+		result = "0" + result;
+	}
+	return result;
 }
 
-
-function steamrollArray(arr) {
-    // I'm a steamroller, baby
-    let box = []
-    desArray(arr, box);
-    return box;
-}
-  
-  steamrollArray([[["a"]], [["b"]]])
+console.log(createId("MaNV"));

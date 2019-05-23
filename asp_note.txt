@@ -1,0 +1,100 @@
+// form
+Html.BeginForm("Create", "NHANVIENs",FormMethod.Post, new { enctype = "multipart/form-data" })
+
+
+// model format dateTime
+[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+public Nullable<System.DateTime> NgaySinh { get; set; }	
+
+// model format luong 
+[DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
+
+// view index gioitinh
+@{if (item.GioiTinh == true)
+    { gtinh = "Nam"; } else
+    { gtinh="Nữ"; }
+  }
+@gtinh
+
+ @*@Html.EditorFor(model => model.MaNV,"@ViewBag.MaNV", new { htmlAttributes = new { @class = "form-control",disabled = "disabled", @readonly = "readonly" } })*@
+
+
+// view show anh
+<tr>
+    <td rowspan="8"><img src="/Images/@Html.DisplayFor(model => model.AnhNV)" width="100" height="100" /></td>
+    <td>Mã nhân viên:</td>
+    <td>@Html.DisplayFor(model => model.MaNV)</td>
+</tr>
+
+
+// view anh upload
+<input type="file" style="height:30px;" name="Avatar" accept="image/*" required />
+@Html.ValidationMessageFor(model => model.AnhNV, "", new { @class = "text-danger" })
+
+// view create gioitinh
+<div class="checkbox">
+    Nam @Html.RadioButtonFor(model => model.GioiTinh, "True", new { @checked = "checked" }) &nbsp;
+    Nữ @Html.RadioButtonFor(model => model.GioiTinh, "False")
+    @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+</div>
+
+
+
+
+// controller nhanvien create
+public ActionResult Create([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,DiaChi,MaPB")] NhanVien nhanVien)
+	{
+	    //System.Web.HttpPostedFileBase Avatar;
+	    var imgNV = Request.Files["Avatar"];
+	    //Lấy thông tin từ input type=file có tên Avatar
+	    string postedFileName = System.IO.Path.GetFileName(imgNV.FileName);
+	    //Lưu hình đại diện về Server
+	    var path = Server.MapPath("/Images/" + postedFileName);
+	    imgNV.SaveAs(path);
+
+	    if (ModelState.IsValid)
+	    {
+	        nhanVien.MaNV = LayMaNV();
+	        nhanVien.AnhNV = postedFileName;
+	        db.NhanViens.Add(nhanVien);
+	        db.SaveChanges();
+	        return RedirectToAction("Index");
+	    }
+
+	    ViewBag.MaPB = new SelectList(db.PhongBans, "MaPB", "TenPB", nhanVien.MaPB);
+	    return View(nhanVien);
+	}
+
+// controller nhanvien edit
+public ActionResult Edit([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,Luong,AnhNV,DiaChi,MaPB")] NhanVien nhanVien)
+	{
+	    var imgNV = Request.Files["Avatar"];
+	    try
+	    { 
+	    //Lấy thông tin từ input type=file có tên Avatar
+	    string postedFileName = System.IO.Path.GetFileName(imgNV.FileName);
+	        //Lưu hình đại diện về Server
+	        var path = Server.MapPath("/Images/" + postedFileName);
+	        imgNV.SaveAs(path);
+	    }
+	    catch
+	    { }
+	    if (ModelState.IsValid)
+	    {
+	        db.Entry(nhanVien).State = EntityState.Modified;
+	        db.SaveChanges();
+	        return RedirectToAction("Index");
+	    }
+	    ViewBag.MaPB = new SelectList(db.PhongBans, "MaPB", "TenPB", nhanVien.MaPB);
+	    return View(nhanVien);
+	}
+
+
+// generate id
+string LayMaNV()
+{
+    var maMax = db.NhanViens.ToList().Select(n => n.MaNV).Max();
+    int maNV = int.Parse(maMax.Substring(2)) + 1;
+    string NV = String.Concat("000", maNV.ToString());
+    return "NV" + NV.Substring(maNV.ToString().Length - 1);
+}
