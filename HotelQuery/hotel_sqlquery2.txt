@@ -10,24 +10,32 @@ CREATE TABLE ADMIN
 CREATE TABLE CUSTOMER
 (
   Customer_id nvarchar(20) PRIMARY KEY,
-  CustomerName nvarchar(20) NOT NULL,
+  CustomerFirstName nvarchar(20) NOT NULL,
+  CustomerLastName nvarchar(20) NOT NULL,
   CustomerTel nvarchar(20) NOT NULL,
   CustomerEmail nvarchar(20)
 )
 GO
 CREATE TABLE ROOMTYPE
 (
-	RoomType_id nvarchar(20) PRIMARY KEY,
-	RType nvarchar(50) NOT NULL
+  RoomType_id nvarchar(20) PRIMARY KEY,
+  RType nvarchar(50) NOT NULL,
+  Descriptions nvarchar(200),
+  Images nvarchar(50) NOT NULL,
+  Views nvarchar(50) NOT NULL,
+  Bed int NOT NULL,
+  MaxPerson int NOT NULL,
+  Size int NOT NULL
 )
+
 GO
 CREATE TABLE ROOM
 (
-	Room_id nvarchar(20) PRIMARY KEY,
-  IsUsing bit default(0),
+  Room_id nvarchar(20) PRIMARY KEY,
   RoomType_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES ROOMTYPE(RoomType_id)
   ON UPDATE CASCADE
-  ON DELETE CASCADE
+  ON DELETE CASCADE,
+
 )
 GO
 CREATE TABLE BOOKING
@@ -38,7 +46,7 @@ CREATE TABLE BOOKING
   Customer_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES CUSTOMER(Customer_id)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
-  Admin_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES ADMIN(Admin_id)
+  Room_id nvarchar(20) FOREIGN KEY REFERENCES ROOM(Room_id)
   ON UPDATE CASCADE
   ON DELETE CASCADE
 )
@@ -46,7 +54,7 @@ GO
 CREATE TABLE RENT
 (
   Rent_id nvarchar(20) PRIMARY KEY,
-  Amount int NOT NULL,
+  Price int NOT NULL,
   IsActive bit DEFAULT(1),
   From_Date date NOT NULL,
   To_Date date,
@@ -67,13 +75,16 @@ CREATE TABLE BILLPAY
   Date date NOT NULL,
   PayType_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES PAYTYPE(PayType_id)
   ON UPDATE CASCADE
+  ON DELETE CASCADE,
+  Customer_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES CUSTOMER(Customer_id)
+  ON UPDATE CASCADE
   ON DELETE CASCADE
 )
 GO
 CREATE TABLE BILL
 (
   Bill_id nvarchar(20) PRIMARY KEY,
-  Total int NOT NULL,
+  Total int,
   BillPay_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES BILLPAY(BillPay_id)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -81,6 +92,6 @@ CREATE TABLE BILL
   ON UPDATE NO ACTION
   ON DELETE NO ACTION,
   Booking_id nvarchar(20) NOT NULL FOREIGN KEY REFERENCES BOOKING(Booking_id)
-  ON UPDATE CASCADE
-  ON DELETE CASCADE
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
 )

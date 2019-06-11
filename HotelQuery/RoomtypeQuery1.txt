@@ -1,0 +1,3 @@
+SELECT rt.RoomType_id, rt.RType, rt.Descriptions, rt.Images, rt.Views, rt.Bed, rt.MaxPerson, rt.Size, r.Price
+FROM ROOMTYPE rt, RENT r
+WHERE (rt.RoomType_id = r.RoomType_id) and (r.IsActive = 'True')
