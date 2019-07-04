@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 // form
 Html.BeginForm("Create", "NHANVIENs",FormMethod.Post, new { enctype = "multipart/form-data" })
 
 
 // model format dateTime
+[DisplayName("Mã phòng ban")]
 [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 public Nullable<System.DateTime> NgaySinh { get; set; }	
 
@@ -98,3 +101,89 @@ string LayMaNV()
     string NV = String.Concat("000", maNV.ToString());
     return "NV" + NV.Substring(maNV.ToString().Length - 1);
 }
+
+var paytypeData = ViewBag.paytypeData as IEnumerable<Hotel_test1.Models.PAYTYPE>;
+
+ @foreach (var pt in paytypeData)
+{
+    <label for="@pt.PayType_id"><b>Phương thức thanh toán</b></label>
+    <input class="form-control" type="radio" name="paytype" id="@pt.PayType_id" value="@pt.PType">
+}
+
+
+
+
+
+				"   <div class='container'>  " + 
+                 "       <div class='row'>  " + 
+                 "           <div class='col-xs-12'>  " + 
+                 "               <div class='invoice-title'>  " +
+                 "                   <h2>Hóa đơn</h2><h3 class='pull-right'>" + mBill.Bill_id + "</h3>  " + 
+                 "               </div>  " + 
+                 "               <hr>  " + 
+                 "               <div class='row'>  " + 
+                 "                   <div class='col-xs-6'>  " + 
+                 "                       <address>  " + 
+                 "                           <strong>Hóa đơn tới:</strong><br>  " + 
+                 "                           " + mBill.BOOKING.CUSTOMER.CustomerLastName + " " + mBill.BOOKING.CUSTOMER.CustomerFirstName + "< br>  "  + 
+                 "                           " + mBill.BOOKING.CUSTOMER.CustomerTel + "<br>  " + 
+                 "                           " + mBill.BOOKING.CUSTOMER.CustomerEmail + "<br>  " + 
+                 "                       </address>  " + 
+                 "                   </div>  " + 
+                 "                     " + 
+                 "               </div>  " + 
+                 "               <div class='row'>  " + 
+                 "                   <div class='col-xs-6' > "  + 
+                 "                       <address>  " + 
+                 "                           <strong>Phương thức thanh toán:</strong><br>  " + 
+                 "                           " + mBill.BILLPAY.PAYTYPE.PType+ "<br>  " +
+                 "                           Thời gian thanh toán: " + mBill.BILLPAY.Date.ToString("dd/MM/yyyy") + "<br>  " + 
+                 "                       </address>  " + 
+                 "                   </div>                 " + 
+                 "               </div>  " + 
+                 "           </div>  " + 
+                 "       </div>  " + 
+                 "     " + 
+                 "       <div class='row'>  " + 
+                 "           <div class='col-md-12'>  " + 
+                 "               <div class='panel panel-default'>  " + 
+                 "                   <div class='panel-heading'>  " + 
+                 "                       <h3 class='panel-title'><strong>Chi tiết Book:</strong></h3>  " + 
+                 "                   </div>  " + 
+                 "                   <div class='panel-body'>  " + 
+                 "                       <div class='table-responsive'>  " + 
+                 "                           <table class='table table-condensed'>  " + 
+                 "                               <thead>  " + 
+                 "                                   <tr>  " + 
+                 "                                       <td><strong>Số phòng</strong></td>  " + 
+                 "                                       <td class='text-center'><strong>Loại phòng</strong></td>  " + 
+                 "                                       <td class='text-center'><strong>Ngày nhận phòng</strong></td>  " + 
+                 "                                       <td class='text-center'><strong>Ngày trả phòng</strong></td>  " + 
+                 "                                       <td class='text-right'><strong>Giá 1 đêm</strong></td>  " + 
+                 "                                   </tr>  " + 
+                 "                               </thead>  " + 
+                 "                               <tbody>  " + 
+                 "     " + 
+                 "                                   <tr>  " + 
+                 "                                       <td>" + mBill.BOOKING.Room_id + "</td>  " +
+                 "                                       <td class='text-center'>" + mBill.BOOKING.ROOM.ROOMTYPE.RType + "</td>  " +
+                 "                                       <td class='text-center'>" + mBill.BOOKING.Check_in_date.ToString("dd/MM/yyyy") + "</td>  " + 
+                 "                                       <td class='text-center'>" + mBill.BOOKING.Check_out_date.ToString("dd/MM/yyyy") + "</td>  " +
+                 "                                       <td class='text-right'>" + mBill.RENT.Price + "</td>  " + 
+                 "                                   </tr>                                  " + 
+                 "                                    " + 
+                 "                                   <tr>  " + 
+                 "                                       <td class='no-line'></td>  " + 
+                 "                                       <td class='no-line'></td>  " + 
+                 "                                       <td class='no-line'></td>  " + 
+                 "                                       <td class='no-line text-center'><strong>Tổng cộng</strong></td>  " +
+                 "                                       <td class='no-line text-right'>" + mBill.Total + "</td>  " + 
+                 "                                   </tr>  " + 
+                 "                               </tbody>  " + 
+                 "                           </table>  " + 
+                 "                       </div>  " + 
+                 "                   </div>  " + 
+                 "               </div>  " + 
+                 "           </div>  " + 
+                 "       </div>  " + 
+                 "  </div>  ";

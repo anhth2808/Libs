@@ -1,3 +1,9 @@
 SELECT rt.RoomType_id, rt.RType, rt.Descriptions, rt.Images, rt.Views, rt.Bed, rt.MaxPerson, rt.Size, r.Price
 FROM ROOMTYPE rt, RENT r
 WHERE (rt.RoomType_id = r.RoomType_id) and (r.IsActive = 'True')
+
+
+// 
+SELECT rt.RoomType_id, rt.RType, rt.Descriptions, rt.Images, rt.Views, rt.Bed, rt.MaxPerson, rt.Size, r.Price
+FROM (SELECT * FROM ROOMTYPE rt WHERE(rt.RoomType_id = 'RT03')) rt, RENT r
+WHERE(r.RoomType_id = rt.RoomType_id) and r.IsActive = 'True'

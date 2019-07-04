@@ -1,68 +1,36 @@
-DECLARE @S DATE;
-SET @S = '2019-01-17'
-DECLARE @E DATE;
-SET @E = '2019-01-17'
 
 
-
-SELECT *
-FROM ROOM
-WHERE ROOM.RoomType_id = 'RT01'
-
-
-
-SELECT *
-FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = 'RT01') a,  BOOKING b
-WHERE a.Room_id = b.Room_id
-
-
-
-SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
-FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = 'RT01') a,  BOOKING b
-WHERE a.Room_id = b.Room_id
-
-
-
-SELECT c.Room_id, c.RoomType_id, c.Booking_id, c.Check_in_date, c.Check_out_date, c.Customer_id
-FROM (
-		SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
-		FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = 'RT01') a,  BOOKING b
-		WHERE a.Room_id = b.Room_id
-	) c
-WHERE c.Check_in_date = '2019-01-17'
-
-
-SELECT *
-FROM (
-		SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
-		FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = 'RT01') a,  BOOKING b
-		WHERE a.Room_id = b.Room_id
-	) c
-WHERE c.Check_in_date = '2019-01-17'
-
-
-
-
----------------------------------------------------------------------------
-DECLARE @S DATE;
-SET @S = '2019-01-11'
-DECLARE @E DATE;
-SET @E = '2019-01-16'
-
-SELECT *
-FROM (
-		SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
-		FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = 'RT01') a,  BOOKING b
-		WHERE a.Room_id = b.Room_id
-	) c
-WHERE NOT ( 
-		( @S < c.Check_in_date and (@E > c.Check_in_date and @E < c.Check_out_date) )
-		or ( ( @S > c.Check_in_date and @S < c.Check_out_date) and @E > c.Check_out_date )
-		or ( @S > c.Check_in_date and @E < c.Check_out_date )
-		or ( @S < c.Check_in_date and @E > c.Check_out_date )
-		)
 --------------------------------------------------------------------------
+DECLARE @S DATE;
+SET @S = '2019-02-11'
+DECLARE @E DATE;
+SET @E = '2019-02-13'
+DECLARE @RT varchar(20);
+SET @RT = 'RT01'
 
+
+(	
+	SELECT Distinct Room_id
+	FROM (
+			SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
+			FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) a,  BOOKING b
+			WHERE a.Room_id = b.Room_id
+		) c
+	WHERE NOT ( 
+			( @S <= c.Check_in_date and (@E >= c.Check_in_date and @E <= c.Check_out_date) )
+			or ( ( @S >= c.Check_in_date and @S <= c.Check_out_date) and @E >= c.Check_out_date )
+			or ( @S >= c.Check_in_date and @E <= c.Check_out_date )
+			or ( @S <= c.Check_in_date and @E >= c.Check_out_date )
+			)
+)
+UNION
+(
+	SELECT a.Room_id
+	FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) a
+	WHERE NOT EXISTS (SELECT Booking_id FROM BOOKING WHERE BOOKING.Room_id = a.Room_id)
+)
+
+--------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 
@@ -73,17 +41,42 @@ SET @E = '2019-02-13'
 DECLARE @RT varchar(20);
 SET @RT = 'RT01'
 
-
-SELECT *
+SELECT Room_id
+FROM ROOM
+EXCEPT
+SELECT Distinct c.Room_id
 FROM (
-		SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
-		FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) a,  BOOKING b
-		WHERE a.Room_id = b.Room_id
-	) c
-WHERE NOT ( 
+	SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
+	FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) a,  BOOKING b
+	WHERE a.Room_id = b.Room_id
+) c
+WHERE ( 
 		( @S <= c.Check_in_date and (@E >= c.Check_in_date and @E <= c.Check_out_date) )
 		or ( ( @S >= c.Check_in_date and @S <= c.Check_out_date) and @E >= c.Check_out_date )
 		or ( @S >= c.Check_in_date and @E <= c.Check_out_date )
 		or ( @S <= c.Check_in_date and @E >= c.Check_out_date )
-		)
---------------------------------------------------------------------------
+)
+
+========OK=======
+DECLARE @S DATE;
+SET @S = '2019-01-13'
+DECLARE @E DATE;
+SET @E = '2019-02-13'
+DECLARE @RT varchar(20);
+SET @RT = 'RT01'
+
+SELECT r.Room_id, r.RoomType_id
+FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) r
+EXCEPT
+SELECT Distinct c.Room_id, c.RoomType_id
+FROM (
+	SELECT a.Room_id, a.RoomType_id, b.Booking_id, b.Check_in_date, b.Check_out_date, b.Customer_id
+	FROM (SELECT * FROM ROOM WHERE ROOM.RoomType_id = @RT) a,  BOOKING b
+	WHERE a.Room_id = b.Room_id
+) c
+WHERE ( 
+		( @S <= c.Check_in_date and (@E >= c.Check_in_date and @E <= c.Check_out_date) )
+		or ( ( @S >= c.Check_in_date and @S <= c.Check_out_date) and @E >= c.Check_out_date )
+		or ( @S >= c.Check_in_date and @E <= c.Check_out_date )
+		or ( @S <= c.Check_in_date and @E >= c.Check_out_date )
+)
