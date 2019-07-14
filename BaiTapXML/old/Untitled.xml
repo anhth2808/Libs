@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DOCUMENT>
+    <CUSTOMER TYPE = "Good">
+        <NAME>
+            <LAST_NAME>AAA</LAST_NAME>
+            <FIRST_NAME>BBB</FIRST_NAME>
+        </NAME>
+        <DATE>1/1/03</DATE>
+        <ORDERS class="SanPham">
+            <ITEM>
+                <PRODUCT> Tomatoes </PRODUCT>
+                <NUMBER>        25</NUMBER>
+                <PRICE>$1.25</PRICE>
+            </ITEM>
+            <ITEM>
+                <PRODUCT> Tomatoes </PRODUCT>
+                <NUMBER>        25</NUMBER>
+                <PRICE>$1.25</PRICE>
+            </ITEM>
+        </ORDERS>
+    </CUSTOMER>
+</DOCUMENT>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE document [
+    <!ELEMENT document (note, menu*, message*)>
+    <!ELEMENT note (#PCDATA)>
+    <!ELEMENT menu (submenu1* , submenu2*)>
+        <!ELEMENT submenu1 (#PCDATA)>
+        <!ELEMENT submenu2 (#PCDATA)>
+    <!ELEMENT message (submessage1 | submessage2)>
+        <!ELEMENT submessage1 (#PCDATA)>
+        <!ELEMENT submessage2 (#PCDATA)>
+]>
+
+<document>
+    <note>Hello</note>
+    <menu>
+        <submenu1>This is submenu1</submenu1>
+    </menu>
+    <menu>
+        <submenu2>This is submenu2</submenu2>
+    </menu>
+    <message>
+        <submessage2>This is submenu1</submessage2>
+    </message>
+    <message>
+        <submessage2>This is submenu1</submessage2>
+    </message>
+</document>

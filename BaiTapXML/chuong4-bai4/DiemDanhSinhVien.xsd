@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="DiemDanhSV">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Lop" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Lop" >
+        <xs:complexType>
+            <xs:sequence>    
+                <xs:element ref="ThangNam"></xs:element>
+            </xs:sequence>
+            
+            <xs:attribute name="TenLop" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">                        
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    
+    <xs:element name="ThangNam">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Thang" type="xs:integer"></xs:element>
+                <xs:element name="Nam" type="xs:integer"></xs:element>
+                <xs:element ref="SinhVienVang"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SinhVienVang">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MSSV">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{8}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="HoTen" type="xs:string"></xs:element>
+                <xs:element name="SoLanVang">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"></xs:minInclusive>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="LyDoVang" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

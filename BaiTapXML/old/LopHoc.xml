@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="LopHoc.xsl"?>
+
+<QuanLyLop>
+    <LopHoc>
+        <MaLop>CNTT16</MaLop>
+        <TenLop>Công nghệ thông tin 2017</TenLop>
+    </LopHoc>
+    <LopHoc>
+        <MaLop>TCKT17</MaLop>
+        <TenLop>Tài chính kế toán 2017</TenLop>
+    </LopHoc>
+    <LopHoc>
+        <MaLop>TKDH15</MaLop>
+        <TenLop>Thiết kế đồ họa</TenLop>
+    </LopHoc>
+</QuanLyLop>

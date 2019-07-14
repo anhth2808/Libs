@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="QLDL">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="DSTour" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="ToChucTour" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="DangKyTour" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="CTPhieuDangKy" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Khoa -->
+        
+        <xs:key name="PKDSTour">
+            <xs:selector xpath="DSTour/MaTour"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:key name="PKToChucTour">
+            <xs:selector xpath="ToChucTour/MaChuyenDi"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:key name="PKDangKyTour">
+            <xs:selector xpath="DangKyTour/MaPhieuDK"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:key name="PKCTPhieuDangKy">
+            <xs:selector xpath="CTPhieuDangKy/SoTT"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+       
+        <!-- Khoa ngoai -->
+        
+        <xs:keyref refer="PKDSTour" name="PKToChucTourtoDSTour">
+            <xs:selector xpath="ToChucTour/MaTour"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref refer="PKToChucTour" name="PKDangKyTourtoToChucTour">
+            <xs:selector xpath="DangKyTour/MaChuyenDi"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref refer="PKDangKyTour" name="PKCTPhieuDangKytoDangKyTour">
+            <xs:selector xpath="CTPhieuDangKy/MaPhieuDK"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+        
+    </xs:element>
+    
+    <xs:element name="DSTour">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaTour">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\w{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TenTour" type="xs:string"></xs:element>
+                <xs:element name="Gia" type="xs:integer"></xs:element>
+                <xs:element name="GhiChu" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="ToChucTour">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaChuyenDi">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{8}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MaTour" type="xs:string"></xs:element>
+                <xs:element name="NgayKH">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{2}/\d{2}/\d{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="NgayKT">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{2}/\d{2}/\d{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DangKyTour">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaPhieuDK">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{8}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MaChuyenDi" type="xs:string"></xs:element>
+                <xs:element name="NgayDK">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{2}/\d{2}/\d{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TongSoTien" type="xs:integer"></xs:element>
+                <xs:element name="TienDatCoc" type="xs:integer"></xs:element>
+                <xs:element name="TinhTrang">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Hủy"></xs:enumeration>
+                            <xs:enumeration value="Tốt"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SoDTLL" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CTPhieuDangKy">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaPhieuDK" type="xs:string"></xs:element>
+                <xs:element name="SoTT" type="xs:integer"></xs:element>
+                <xs:element name="HoTenKH" type="xs:string"></xs:element>
+                <xs:element name="NamSinh" type="xs:integer"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

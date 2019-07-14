@@ -52,3 +52,7 @@ System.Diagnostics.Debug.WriteLine(log data here)
 
 
 
+
+Gatigun1!
+workstation id=deluxe-hotel.mssql.somee.com;packet size=4096;user id=traeh98;pwd=Gatigun1!;data source=deluxe-hotel.mssql.somee.com;persist security info=False;initial catalog=deluxe-hotel
+ 	 

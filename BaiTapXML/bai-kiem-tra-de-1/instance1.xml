@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cau3.xsl"?>
+<QLMS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/Bai-kiem-tra-de-1/QLMS.xsd">
+    <!--THE LOAI-->
+    <TheLoai>
+        <MaTL>00</MaTL>
+        <TenTL>Giáo khoa</TenTL>
+    </TheLoai>
+    <TheLoai>
+        <MaTL>01</MaTL>
+        <TenTL>Khoa Học kỹ thuật</TenTL>
+    </TheLoai>
+    <TheLoai>
+        <MaTL>02</MaTL>
+        <TenTL>Khoa Học viễn tưởng</TenTL>
+    </TheLoai>
+    <TheLoai>
+        <MaTL>03</MaTL>
+        <TenTL>Văn hóa</TenTL>
+    </TheLoai>
+    <TheLoai>
+        <MaTL>04</MaTL>
+        <TenTL>Thường thức</TenTL>
+    </TheLoai>
+    
+    <!-- SACH -->
+    <Sach>
+        <MaSach>A00000</MaSach>
+        <TenSach>Sách văn</TenSach>
+        <TacGia>Ông A</TacGia>
+        <MaTL>00</MaTL>
+    </Sach>
+    <Sach>
+        <MaSach>A00001</MaSach>
+        <TenSach>Star war</TenSach>
+        <TacGia>Nguyễn văn B</TacGia>
+        <MaTL>02</MaTL>
+    </Sach>
+    <Sach>
+        <MaSach>A00002</MaSach>
+        <TenSach>Truyện kiều</TenSach>
+        <TacGia>Nguyễn Văn C</TacGia>
+        <MaTL>03</MaTL>
+    </Sach>
+    <Sach>
+        <MaSach>A00003</MaSach>
+        <TenSach>Sách Ngoại ngữ</TenSach>
+        <TacGia>Trần Thị F</TacGia>
+        <MaTL>00</MaTL>
+    </Sach>
+    <Sach>
+        <MaSach>A00004</MaSach>
+        <TenSach>Sách toán</TenSach>
+        <TacGia>TacGia1</TacGia>
+        <MaTL>00</MaTL>
+    </Sach>
+    
+    
+    <!-- THE DOC GIA -->
+    <TheDocGia>
+        <MaThe>PM0000</MaThe>
+        <TenDG>Nguyễn thị A</TenDG>
+        <DiaChi>03 Suối Lau, Khánh Hòa</DiaChi>
+        <NgayCap>12/03/2017</NgayCap>
+    </TheDocGia>
+    <TheDocGia>
+        <MaThe>PM0001</MaThe>
+        <TenDG>Nguyễn thị B</TenDG>
+        <DiaChi>02 Nguyễn T.Thuật, Nha Trang</DiaChi>
+        <NgayCap>12/04/2017</NgayCap>
+    </TheDocGia>
+    <TheDocGia>
+        <MaThe>PM0002</MaThe>
+        <TenDG>Nguyễn thị C</TenDG>
+        <DiaChi>08 Hòn Chòng, Nha Trang</DiaChi>
+        <NgayCap>20/03/2018</NgayCap>
+    </TheDocGia>
+    <TheDocGia>
+        <MaThe>PM0003</MaThe>
+        <TenDG>Nguyễn thị D</TenDG>
+        <DiaChi>02 Vĩnh Phước, Nha Trang</DiaChi>
+        <NgayCap>07/01/2018</NgayCap>
+    </TheDocGia>
+    <TheDocGia>
+        <MaThe>PM0004</MaThe>
+        <TenDG>Nguyễn thị E</TenDG>
+        <DiaChi>Chợ Đầm, Nha Trang</DiaChi>
+        <NgayCap>17/02/2018</NgayCap>
+    </TheDocGia>
+    
+    <!-- CHI TIET MUON -->
+    <ChiTietMuon>
+        <MaThe>PM0000</MaThe>
+        <MaSach>A00000</MaSach>
+        <NgayMuon>17/02/2019</NgayMuon>
+        <NgayTra>17/04/2019</NgayTra>
+        <TaiCho>Về nhà</TaiCho>
+    </ChiTietMuon>
+    <ChiTietMuon>
+        <MaThe>PM0001</MaThe>
+        <MaSach>A00001</MaSach>
+        <NgayMuon>23/01/2018</NgayMuon>
+        <NgayTra>28/02/2018</NgayTra>
+        <TaiCho>Về nhà</TaiCho>
+    </ChiTietMuon>
+    <ChiTietMuon>
+        <MaThe>PM0001</MaThe>
+        <MaSach>A00002</MaSach>
+        <NgayMuon>17/08/2018</NgayMuon>
+        <NgayTra>19/08/2018</NgayTra>
+        <TaiCho>Tại chỗ</TaiCho>
+    </ChiTietMuon>
+    <ChiTietMuon>
+        <MaThe>PM0002</MaThe>
+        <MaSach>A00002</MaSach>
+        <NgayMuon>17/05/2018</NgayMuon>
+        <NgayTra>20/08/2019</NgayTra>
+        <TaiCho>Về nhà</TaiCho>
+    </ChiTietMuon>
+    <ChiTietMuon>
+        <MaThe>PM0004</MaThe>
+        <MaSach>A00004</MaSach>
+        <NgayMuon>11/04/2019</NgayMuon>
+        <NgayTra>17/05/2018</NgayTra>
+        <TaiCho>Tại chỗ</TaiCho>
+    </ChiTietMuon>
+    
+    <!-- LE PHI -->
+    <LePhi>
+        <MaThe>PM0000</MaThe>
+        <Nam>2018</Nam>
+        <Phi>100000</Phi>
+    </LePhi>
+    <LePhi>
+        <MaThe>PM0001</MaThe>
+        <Nam>2018</Nam>
+        <Phi>200000</Phi>
+    </LePhi>
+    <LePhi>
+        <MaThe>PM0002</MaThe>
+        <Nam>2019</Nam>
+        <Phi>90000</Phi>
+    </LePhi>
+    <LePhi>
+        <MaThe>PM0003</MaThe>
+        <Nam>2019</Nam>
+        <Phi>150000</Phi>
+    </LePhi>
+    <LePhi>
+        <MaThe>PM0004</MaThe>
+        <Nam>2017</Nam>
+        <Phi>110000</Phi>
+    </LePhi>
+</QLMS>

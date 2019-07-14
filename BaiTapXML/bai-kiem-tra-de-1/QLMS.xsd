@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="QLMS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="TheLoai" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="Sach" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="TheDocGia" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="ChiTietMuon" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="LePhi" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Khoa -->
+        <xs:key name="PKTheLoai">
+            <xs:selector xpath="TheLoai/MaTL"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:key name="PKSach">
+            <xs:selector xpath="Sach/MaSach"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:key name="PKTheDocGia">
+            <xs:selector xpath="TheDocGia/MaThe"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        <!--  
+        <xs:key name="PKChiTietMuon">
+            <xs:selector xpath="ChiTietMuon/NgayMuon"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        -->
+        
+        <!--
+        <xs:key name="PKLePhi">
+            <xs:selector xpath="LePhi/Nam"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        -->
+       
+        <!-- Khoa Phu -->
+        
+        <xs:keyref refer="PKTheLoai" name="PKSachtoTheLoai">
+            <xs:selector xpath="Sach/MaTL"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref refer="PKTheDocGia" name="PKChiTietMuontoTheDocGia">
+            <xs:selector xpath="ChiTietMuon/MaThe"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        <xs:keyref refer="PKSach" name="PKChiTietMuontoSach">
+            <xs:selector xpath="ChiTietMuon/MaSach"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref refer="PKTheDocGia" name="PKLePhitoTheDocGia">
+            <xs:selector xpath="LePhi/MaThe"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:keyref>
+        
+    </xs:element>
+    
+    
+    <!-- zz -->
+    
+    <xs:element name="TheLoai">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaTL">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\w{2}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TenTL" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Sach">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaSach">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="A\w{5}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TenSach" type="xs:string"></xs:element>
+                <xs:element name="TacGia" type="xs:string"></xs:element>
+                <xs:element name="MaTL" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="TheDocGia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaThe">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="PM\w{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TenDG" type="xs:string"></xs:element>
+                <xs:element name="DiaChi" type="xs:string"></xs:element>
+                <xs:element name="NgayCap" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="ChiTietMuon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaThe" type="xs:string"></xs:element>
+                <xs:element name="MaSach" type="xs:string"></xs:element>
+                <xs:element name="NgayMuon" type="xs:string"></xs:element>
+                <xs:element name="NgayTra" type="xs:string"></xs:element>
+                <xs:element name="TaiCho">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Về nhà"></xs:enumeration>
+                            <xs:enumeration value="Tại chỗ"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="LePhi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaThe" type="xs:string"></xs:element>
+                <xs:element name="Nam" type="xs:string"></xs:element>
+                <xs:element name="Phi" type="xs:integer"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

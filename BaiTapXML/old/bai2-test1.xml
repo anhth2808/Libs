@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QLDH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/bai2.xsd">
+    <KhachHang>
+        <MaKH>
+        </MaKH>
+        <TenKH>
+        </TenKH>
+        <DiaChiKH>
+        </DiaChiKH>
+        <DSMatHang>
+            <MatHang>
+                <MaMatHang>
+                </MaMatHang>
+                <TenMatHang>
+                </TenMatHang>
+                <SoLuong>
+                </SoLuong>
+                <DonGia>
+                </DonGia>
+            </MatHang>
+        </DSMatHang>
+    </KhachHang>
+</QLDH>

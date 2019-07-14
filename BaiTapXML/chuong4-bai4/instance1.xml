@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiemDanhSV xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/chuong4-bai4/DiemDanhSinhVien.xsd">
+    <Lop TenLop="TenLop0">
+        <ThangNam>
+            <Thang>0</Thang>
+            <Nam>0</Nam>
+            <SinhVienVang>
+                <MSSV>00000000</MSSV>
+                <HoTen>HoTen0</HoTen>
+                <SoLanVang>50</SoLanVang>
+                <LyDoVang>LyDoVang0</LyDoVang>
+            </SinhVienVang>
+        </ThangNam>
+    </Lop>
+    <Lop TenLop="TenLop1">
+        <ThangNam>
+            <Thang>0</Thang>
+            <Nam>0</Nam>
+            <SinhVienVang>
+                <MSSV>00000000</MSSV>
+                <HoTen>HoTen1</HoTen>
+                <SoLanVang>50</SoLanVang>
+                <LyDoVang>LyDoVang1</LyDoVang>
+            </SinhVienVang>
+        </ThangNam>
+    </Lop>
+</DiemDanhSV>

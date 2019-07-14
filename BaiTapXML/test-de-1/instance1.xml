@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="QLKS.xsl"?>
+<QLKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/test-de-1/QLKS.xsd">
+    <Phong>
+        <MaPhong>000</MaPhong>
+        <Tang>1</Tang>
+        <GiaNiemYet>400000</GiaNiemYet>
+    </Phong>
+    <Phong> 
+        <MaPhong>001</MaPhong>
+        <Tang>1</Tang>
+        <GiaNiemYet>450000</GiaNiemYet>
+    </Phong>
+    <Phong>
+        <MaPhong>002</MaPhong>
+        <Tang>2</Tang>
+        <GiaNiemYet>250000</GiaNiemYet>
+    </Phong>
+    <Phong>
+        <MaPhong>003</MaPhong>
+        <Tang>2</Tang>
+        <GiaNiemYet>300000</GiaNiemYet>
+    </Phong>
+    <Phong>
+        <MaPhong>004</MaPhong>
+        <Tang>5</Tang>
+        <GiaNiemYet>200000</GiaNiemYet>
+    </Phong>
+    
+    <KhachHang>
+        <MaKH>K000</MaKH>
+        <HoKH>Tran</HoKH>
+        <TenKH>Hoang Anh</TenKH>
+        <DiaChi>So 1, Cu thanh, Khanh Hoa</DiaChi>
+        <SoDienThoai>0912.002003</SoDienThoai>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>K001</MaKH>
+        <HoKH>Nguyen</HoKH>
+        <TenKH>Thi Hanh</TenKH>
+        <DiaChi>so 2, Cu thanh, Khanh Hoa</DiaChi>
+        <SoDienThoai>0912.002003</SoDienThoai>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>K002</MaKH>
+        <HoKH>Cao</HoKH>
+        <TenKH>Thi Tiet</TenKH>
+        <DiaChi>so 3, Cu thanh, Khanh Hoa</DiaChi>
+        <SoDienThoai>0912.002003</SoDienThoai>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>K003</MaKH>
+        <HoKH>Ngo</HoKH>
+        <TenKH>Kha ba</TenKH>
+        <DiaChi>so 4, Cu thanh, Khanh Hoa</DiaChi>
+        <SoDienThoai>0912.002003</SoDienThoai>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>K004</MaKH>
+        <HoKH>Nguyen</HoKH>
+        <TenKH>Hai</TenKH>
+        <DiaChi>so 5, Cu thanh, Khanh Hoa</DiaChi>
+        <SoDienThoai>0912.002003</SoDienThoai>
+    </KhachHang>
+    
+    <PhieuDatPhong>
+        <MaPhieu>P000</MaPhieu>
+        <MaKH>K000</MaKH>
+        <NgayDatPhong>28/03/2018</NgayDatPhong>
+    </PhieuDatPhong>
+    <PhieuDatPhong>
+        <MaPhieu>P001</MaPhieu>
+        <MaKH>K001</MaKH>
+        <NgayDatPhong>12/02/2018</NgayDatPhong>
+    </PhieuDatPhong>
+    <PhieuDatPhong>
+        <MaPhieu>P002</MaPhieu>
+        <MaKH>K002</MaKH>
+        <NgayDatPhong>11/06/2018</NgayDatPhong>
+    </PhieuDatPhong>
+    <PhieuDatPhong>
+        <MaPhieu>P003</MaPhieu>
+        <MaKH>K001</MaKH>
+        <NgayDatPhong>26/03/2018</NgayDatPhong>
+    </PhieuDatPhong>
+    <PhieuDatPhong>
+        <MaPhieu>P004</MaPhieu>
+        <MaKH>K003</MaKH>
+        <NgayDatPhong>11/03/2018</NgayDatPhong>
+    </PhieuDatPhong>
+    
+    <ChiTietPhieu>
+        <MaPhieu>P000</MaPhieu>
+        <MaPhong>001</MaPhong>
+        <NgayDen>29/03/2018</NgayDen>
+        <NgayDi>30/03/2018</NgayDi>
+        <DonGia>200000</DonGia>
+    </ChiTietPhieu>
+    <ChiTietPhieu>
+        <MaPhieu>P001</MaPhieu>
+        <MaPhong>001</MaPhong>
+        <NgayDen>12/02/2018</NgayDen>
+        <NgayDi>18/02/2018</NgayDi>
+        <DonGia>230000</DonGia>
+    </ChiTietPhieu>
+    <ChiTietPhieu>
+        <MaPhieu>P002</MaPhieu>
+        <MaPhong>002</MaPhong>
+        <NgayDen>12/06/2018</NgayDen>
+        <NgayDi>19/06/2018</NgayDi>
+        <DonGia>250000</DonGia>
+    </ChiTietPhieu>
+    <ChiTietPhieu>
+        <MaPhieu>P003</MaPhieu>
+        <MaPhong>003</MaPhong>
+        <NgayDen>28/03/2018</NgayDen>
+        <NgayDi>07/04/2018</NgayDi>
+        <DonGia>100000</DonGia>
+    </ChiTietPhieu>
+    <ChiTietPhieu>
+        <MaPhieu>P004</MaPhieu>
+        <MaPhong>004</MaPhong>
+        <NgayDen>18/01/2018</NgayDen>
+        <NgayDi>23/01/2018</NgayDi>
+        <DonGia>300000</DonGia>
+    </ChiTietPhieu>
+    
+</QLKS>

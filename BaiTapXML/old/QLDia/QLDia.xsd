@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="SPECIALS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TITLE">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string"></xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MESSAGE">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string"></xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="CD">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="ARTIST">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string"></xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="PRICEUS">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer"></xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="PRICEVN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer"></xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>                           
+                            <xs:element name="TRACK">
+                                <xs:complexType>
+                                    <xs:attribute name="length" type="xs:integer"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

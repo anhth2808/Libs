@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SPECIALS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/QLDia.xsd">
+    <TITLE>TITLE0</TITLE>
+    <MESSAGE>MESSAGE0</MESSAGE>
+    <CD>
+        <ARTIST>ARTIST0</ARTIST>
+        <PRICEUS>PRICEUS0</PRICEUS>
+        <PRICEVN>PRICEVN0</PRICEVN>
+        <TRACK/>
+    </CD>
+    <CD>
+        <ARTIST>ARTIST1</ARTIST>
+        <PRICEUS>PRICEUS1</PRICEUS>
+        <PRICEVN>PRICEVN1</PRICEVN>
+        <TRACK/>
+    </CD>
+</SPECIALS>

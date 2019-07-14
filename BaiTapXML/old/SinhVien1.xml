@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="SinhVien.xsl"?>
+<QuanLySinhVien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="SinhVien.xsd">
+    <SinhVien>
+        <MaSv>MaSv0</MaSv>
+        <TenSv>TenSv0</TenSv>
+        <GioiTinh>Nam</GioiTinh>
+        <NgaySinh>2006-05-04</NgaySinh>
+        <MaLop>AAAA00</MaLop>
+    </SinhVien>
+    <SinhVien>
+        <MaSv>MaSv1</MaSv>
+        <TenSv>TenSv1</TenSv>
+        <GioiTinh>Nữ</GioiTinh>
+        <NgaySinh>2006-05-04</NgaySinh>
+        <MaLop>AAAA00</MaLop>
+    </SinhVien>
+</QuanLySinhVien>

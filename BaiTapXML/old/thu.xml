@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./thu.xsl" ?>
+
+<document>
+    <greeting>Hello World!!!!!!</greeting>
+    <message>Viết vài từ VN</message>
+</document>
+
+<!-- 
+<!DOCTYPE DOCUMENT SYSTEM(ITEM)
+
+dtd ngoai
+EX: <!DOCTYPE DOCUMENT SYSTEM "Vidu.dtd"
+
+<!DOCTYPE SYSTEM DTD
+<!DOCTYPE SYstem "HTTP://.."
+
+
+A*: Không có hoặc có nhiều phần tử
+A+: Có ít nhất 1 phần tử
+A?: 0 or 1 phần tử
+
+
+
+#PCDATA: chứa giá trị bên trong
+
+dtd -> xml
+tools/generate sample xml file
+xml -> dtd
+generate/convert schema
+bt cuoi chung 3
+-->

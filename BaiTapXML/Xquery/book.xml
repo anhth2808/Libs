@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore>
+    <book category="cooking">
+        <title lang="en">Everyday italian</title>
+        <author>Giada de laurentils</author>
+        <year>2005</year>
+        <price>30.00</price>        
+    </book>
+    <book category="children">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>29.99</price>        
+    </book>
+    <book category="web">
+        <title lang="en">XQueryKick start</title>
+        <author>Vaidyanathan 1</author>
+        <author>Vaidyanathan 2</author>
+        <author>Vaidyanathan 3</author>
+        <author>Vaidyanathan 4</author>
+        <year>2003</year>
+        <price>49.99</price>        
+    </book>
+    <book category="web" corver="paperback">
+        <title lang="en">Learning XML</title>
+        <author>Giada de laurentils</author>
+        <year>2003</year>
+        <price>39.95</price>        
+    </book>
+</bookstore>

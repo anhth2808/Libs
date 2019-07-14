@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="QLDia.xsl"?>
+<SPECIALS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/chuong4-bai8/QLDia.xsd">
+    <TITLE>TITLE0</TITLE>
+    <MESSAGE>MESSAGE0</MESSAGE>
+    <CD>A hihi
+        <ARTIST>Ai đó</ARTIST>
+        <PRICEUS>12</PRICEUS>
+        <PRICEVN>1200</PRICEVN>
+        <TRACK length="50"/>A 1
+        <TRACK length="50"/>A 2
+    </CD>
+    <CD>Ước mơ
+        <ARTIST>Nghệ sĩ giàu hihi</ARTIST>
+        <PRICEUS>50</PRICEUS>
+        <PRICEVN>5000</PRICEVN>
+        <TRACK length="50"/>Bài 1
+        <TRACK length="50"/>Bài 2
+    </CD>
+    <CD>
+        <ARTIST>Nghệ sĩ nghèo</ARTIST>
+        <PRICEUS>11</PRICEUS>
+        <PRICEVN>1100</PRICEVN>
+        <TRACK length="50"/>Đoán xem
+        <TRACK length="50"/>Không biết
+    </CD>
+</SPECIALS>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Style 1 -->
+<!DOCTYPE note [
+<!ELEMENT note (to, from, heading, body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+<note>
+    <to>Somebody</to>
+    <from>Traeh</from>
+    <heading>Say hello</heading>
+    <body>i want to say something to u, f</body>
+</note>

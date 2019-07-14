@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- THAY ĐỔI CÂU BẰNG CÁC KÝ TỰ A-B-C-D-->
+<?xml-stylesheet type="text/xsl" href="XSLT_CauD2.xslt"?>
+
+<DanhSachKhachSan>
+  <KhachSan>
+    <TenKhachSan>CDKTKTLD</TenKhachSan>
+    <!--Mẫu CÁC LOẠI PHÒNG-->
+    <ID_search>001</ID_search>
+    <Phong map="001">
+      <MaPhong>P1</MaPhong>
+      <LoaiPhong>Doi</LoaiPhong>
+      <TenPhong>Phong1</TenPhong>
+      <Tang>1</Tang>
+      <SDT>01</SDT>
+      <DonGia>500000</DonGia>
+    </Phong>
+    <Phong map="002">
+      <MaPhong>P2</MaPhong>
+      <LoaiPhong>Don</LoaiPhong>
+      <TenPhong>Phong2</TenPhong>
+      <Tang>1</Tang>
+      <SDT>02</SDT>
+      <DonGia>550000</DonGia>
+    </Phong>
+     <Phong map="003">
+      <MaPhong>P3</MaPhong>
+      <LoaiPhong>Doi</LoaiPhong>
+      <TenPhong>Phong3</TenPhong>
+      <Tang>3</Tang>
+      <SDT>03</SDT>
+      <DonGia>650000</DonGia>
+    </Phong>
+    <!--CÁC mẫu LOẠI DỊCH VỤ-->
+    <DichVu>
+      <MaDV>XH</MaDV>
+      <TenDV>Xông Hơi</TenDV>
+      <DonGia>500000</DonGia>
+    </DichVu>
+    <DichVu>
+      <MaDV>MS</MaDV>
+      <TenDV>Mát Xa</TenDV>
+      <DonGia>500000</DonGia>
+    </DichVu>
+   
+    <KhachHang MaKH='001'>
+      <MaKH>001</MaKH>
+      <TenKH>Nguyen Tran</TenKH>
+      <DiaChi>Đà Lạt</DiaChi>
+      <CMND>111</CMND>
+      <SoDT>111</SoDT>
+     
+        <HoaDon mahd="001">
+          <NgayDen>01-10-2018</NgayDen>
+          <NgayDi>10-10-2018</NgayDi>
+          <MaPhong>P1</MaPhong>
+          <MaDV>XH</MaDV>
+         
+          <LoaiPhong>Doi</LoaiPhong>
+          <TenPhong>Phong1</TenPhong>
+          <Tang>1</Tang>
+          <SDT>01</SDT>
+          <DonGia>500000</DonGia>
+        </HoaDon>
+       <HoaDon mahd="002">
+          <NgayDen>10-10-2018</NgayDen>
+          <NgayDi>17-10-2018</NgayDi>
+        
+          <MaDV>Ms</MaDV>
+         <MaPhong>P3</MaPhong>
+         <LoaiPhong>Doi</LoaiPhong>
+         <TenPhong>Phong3</TenPhong>
+         <Tang>2</Tang>
+         <SDT>03</SDT>
+         <DonGia>650000</DonGia>
+        </HoaDon>
+       <HoaDon mahd="004">
+         <NgayDen>17-10-2018</NgayDen>
+         <NgayDi>29-10-2018</NgayDi>
+      
+         <MaDV>MS</MaDV>
+         <MaPhong>P2</MaPhong>
+         <LoaiPhong>Don</LoaiPhong>
+         <TenPhong>Phong2</TenPhong>
+         <Tang>1</Tang>
+         <SDT>02</SDT>
+         <DonGia>500000</DonGia>
+       </HoaDon>
+    </KhachHang>
+    <KhachHang MaKH="002">
+      <MaKH>002</MaKH>
+      <TenKH>NguyenPhuc</TenKH>
+      <DiaChi>Đà Lạt</DiaChi>
+      <CMND>222</CMND>
+      <SoDT>222</SoDT>
+     
+        <HoaDon mahd="003">
+          <NgayDen>15-10-2018</NgayDen>
+          <NgayDi>25-10-2018</NgayDi>
+        
+          <MaDV>MS</MaDV>
+          <MaPhong>P1</MaPhong>
+          <LoaiPhong>Don</LoaiPhong>
+          <TenPhong>Phong1</TenPhong>
+          <Tang>1</Tang>
+          <SDT>01</SDT>
+          <DonGia>500000</DonGia>
+        </HoaDon>
+
+      <HoaDon mahd="004">
+        <NgayDen>26-10-2018</NgayDen>
+        <NgayDi>30-10-2018</NgayDi>
+        <MaPhong>P1</MaPhong>
+        <MaDV>XH</MaDV>
+        
+        <LoaiPhong>Doi</LoaiPhong>
+        <TenPhong>Phong1</TenPhong>
+        <Tang>1</Tang>
+        <SDT>01</SDT>
+        <DonGia>550000</DonGia>
+      </HoaDon>
+    </KhachHang>
+    <KhachHang MaKH="003">
+      <MaKH>003</MaKH>
+      <TenKH>NguyenTuanAnh</TenKH>
+      <DiaChi>Đà Lạt</DiaChi>
+      <CMND>333</CMND>
+      <SoDT>333</SoDT>
+
+      <HoaDon mahd="006">
+        <NgayDen>15-10-2018</NgayDen>
+        <NgayDi>25-10-2018</NgayDi>
+       
+        <MaDV>XH</MaDV>
+        <MaPhong>P1</MaPhong>
+        <LoaiPhong>Don</LoaiPhong>
+        <TenPhong>Phong1</TenPhong>
+        <Tang>1</Tang>
+        <SDT>01</SDT>
+        <DonGia>500000</DonGia>
+      </HoaDon>
+    </KhachHang>
+  <DiaChi>39 Tran Phu</DiaChi>
+  </KhachSan>
+</DanhSachKhachSan>

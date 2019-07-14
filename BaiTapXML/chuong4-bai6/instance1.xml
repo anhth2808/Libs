@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inventorys xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/chuong4-bai6/BanHangOnline.xsd">
+    <Inventory>
+        <Name>A11111</Name>
+        <InventoryID>A11111</InventoryID>
+        <UnitPrice>50.5</UnitPrice>
+        <StockBin>B000</StockBin>
+    </Inventory>
+    <Inventory>
+        <Name>A11111</Name>
+        <InventoryID>A11111</InventoryID>
+        <UnitPrice>50.5</UnitPrice>
+        <StockBin>B000</StockBin>
+    </Inventory>
+</Inventorys>

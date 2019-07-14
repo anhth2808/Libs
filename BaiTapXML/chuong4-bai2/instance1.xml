@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuanLiDonHang xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/D:/Projects/BaiTapXML/chuong4-bai2/QuanLiDonHang.xsd">
+    <DonHang>
+        <MaKh>AA00</MaKh>
+        <TenKh>TenKh0</TenKh>
+        <DiaChi>000----------</DiaChi>
+        <MacHang>
+            <MaMh>AA00</MaMh>
+            <TenMh>TenMh0</TenMh>
+            <SoLuong>50</SoLuong>
+            <DonGia>50</DonGia>
+        </MacHang>
+    </DonHang>
+</QuanLiDonHang>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SPECIALS>
+    <TITLE>TITLE0</TITLE>
+    <MESSAGE>MESSAGE0</MESSAGE>
+    <CD>
+        <ARTIST>ARTIST0</ARTIST>
+        <PRICEUS>PRICEUS0</PRICEUS>
+        <PRICEVN>PRICEVN0</PRICEVN>
+        <TRACK length="3"/>
+    </CD>
+    <CD>
+        <ARTIST>ARTIST1</ARTIST>
+        <PRICEUS>PRICEUS1</PRICEUS>
+        <PRICEVN>PRICEVN1</PRICEVN>
+        <TRACK length="6"/>
+    </CD>
+    <CD>
+        <ARTIST>111</ARTIST>
+        <PRICEUS>PRICEUS1</PRICEUS>
+        <PRICEVN>PRICEVN1</PRICEVN>
+        <TRACK length="6"/>
+    </CD>
+    <CD>
+        <ARTIST>ARTIST1</ARTIST>
+        <PRICEUS>PRICEUS1</PRICEUS>
+        <PRICEVN>PRICEVN1</PRICEVN>
+        <TRACK length="6"/>
+    </CD>
+</SPECIALS>

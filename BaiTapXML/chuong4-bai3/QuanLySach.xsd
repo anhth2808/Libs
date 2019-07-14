@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="QuanLySach">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="LinhVuc" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="LinhVuc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TenLinhVuc" type="xs:string"></xs:element>
+                <xs:element ref="Sach"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Sach">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaSach" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[A-z]{2}\d{4}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TuaDe" type="xs:string" maxOccurs="1">
+                    
+                </xs:element>
+                <xs:element ref="TacGia" maxOccurs="unbounded">
+                    
+                </xs:element>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="TacGia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaTacGia" type="xs:string"></xs:element>
+                <xs:element name="TenTacGia" type="xs:string" maxOccurs="1"></xs:element>
+                <xs:element name="DiaChiEmail">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\w{2}@\w{2}[.]w{2}"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="SDT" >
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{2,}[.]\d+"></xs:pattern>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
