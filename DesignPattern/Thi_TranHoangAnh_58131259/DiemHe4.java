@@ -10,6 +10,11 @@ package Thi_TranHoangAnh_58131259;
  * @author Hoang Anh
  */
 public class DiemHe4 extends Decorator{   
+
+    public DiemHe4(ICompoment component) {
+        super(component);
+    }    
+    
     
     protected void hienThiDiemHe4() {
         float temp = super.getMonHoc().getDiemTB();

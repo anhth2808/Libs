@@ -12,12 +12,12 @@ package Thi_TranHoangAnh_58131259;
 public class TinhDiemTB extends Decorator{
     private float hsKT;
 
+    public TinhDiemTB(ICompoment component) {
+        super(component);
+    }        
     
-    public TinhDiemTB(float hsKT) {
-        this.hsKT = hsKT;
-    }
     
-        
+    
     protected void hienThiDiemTB() {
         float diemThi = super.getMonHoc().getDiemThi();
         float diemKT = super.getMonHoc().getDiemKT();        
@@ -44,6 +44,8 @@ public class TinhDiemTB extends Decorator{
     public void setHsKT(float hsKT) {
         this.hsKT = hsKT;
     }
+    
+    
     
     
     

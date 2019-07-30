@@ -11,6 +11,10 @@ package Thi_TranHoangAnh_58131259;
  */
 public class Decorator implements ICompoment{
     protected ICompoment component;
+
+    public Decorator(ICompoment component) {
+        this.component = component;
+    }
     
     
     @Override

@@ -23,15 +23,12 @@ public class MainDemo {
         mh.setDiemKT(7);        
         ttmh.setMh(mh);                
         
-        TinhDiemTB tdtb = new TinhDiemTB(0.5f);
-        tdtb.setComponent(ttmh);
-     
-        DiemHe4 dh4 = new DiemHe4();
-        dh4.setComponent(tdtb);
+        TinhDiemTB tdtb = new TinhDiemTB(ttmh);
+        tdtb.setHsKT(0.5f);
+                
+        DiemHe4 dh4 = new DiemHe4(tdtb);
         
-        KQXepLoai kqxl = new KQXepLoai();
-        kqxl.setComponent(dh4);
-
+        KQXepLoai kqxl = new KQXepLoai(dh4);
         
         kqxl.hienThi();
     }

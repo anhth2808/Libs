@@ -10,6 +10,12 @@ package Thi_TranHoangAnh_58131259;
  * @author Hoang Anh
  */
 public class KQXepLoai extends Decorator{
+
+    public KQXepLoai(ICompoment component) {
+        super(component);
+    }
+        
+    
     protected void hienThiKQ() {
         float temp = super.getMonHoc().getDiemTB();
         if (temp >= 5) {
