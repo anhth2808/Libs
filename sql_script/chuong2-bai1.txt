@@ -1,0 +1,131 @@
+create database QLSV
+go
+use QLSV
+go
+create table KHOA
+(
+	MaKhoa varchar(10) primary key,
+	TenKhoa nvarchar(50) not null,
+	SL_CBGD smallint not null
+)
+go
+create table SINHVIEN
+(
+	MSSV varchar(5) primary key,
+	Ten nvarchar(50) not null,
+	PhaiNu bit not null,
+	Diachi nvarchar(100) not null,
+	DienThoai varchar(20),
+	MaKhoa varchar(10) not null foreign key references KHOA(MaKhoa)
+)
+go
+create table GIAOVIEN
+(
+	MaGV varchar(5) primary key,
+	TenGV nvarchar(50) not null,
+	MaKhoa varchar(10) not null foreign key references KHOA(MaKhoa)
+)
+go
+create table MONHOC
+(
+	MaMH varchar(5) primary key,
+	TenMH nvarchar(50) not null,
+	SoTC int not null
+)
+go
+create table GIANGDAY
+(
+	MaKhoaHoc varchar(5) primary key,
+	MaGV varchar(5) not null foreign key references GIAOVIEN(MaGV),
+	MaMH varchar(5) not null foreign key references MONHOC(MaMH),
+	HocKy smallint not null,
+	Nam int not null
+)
+go
+create table KETQUA
+(
+	MaSV varchar(5) foreign key references SINHVIEN(MSSV),
+	MaKhoaHoc varchar(5) foreign key references GIANGDAY(MaKhoaHoc),
+	Primary key(MaSV, MaKhoaHoc)
+)
+go
+alter table KETQUA
+add Diem decimal(3,1);
+go
+
+/***************KHOA *******************/
+insert KHOA(MaKhoa, TenKhoa, SL_CBGD)
+values ('CNTT', N'Công nghệ thông tin', 15)
+insert KHOA(MaKhoa, TenKhoa, SL_CBGD)
+values ('TOAN', N'Toán', 20)
+insert KHOA(MaKhoa, TenKhoa, SL_CBGD)
+values ('SINH', N'Sinh học', 7)
+
+go
+
+/***************SINHVIEN *******************/
+insert SINHVIEN(MSSV, Ten, PhaiNu, DiaChi, DienThoai, MaKhoa)
+values ('SV001', N'Bùi Thúy An', 1, N'223 TRAN HUNG DAO, HCM', '0843132203', 'CNTT')
+insert SINHVIEN(MSSV, Ten, PhaiNu, DiaChi, DienThoai, MaKhoa)
+values ('SV002', N'Nguyễn Thanh Tùng', 0, N'223 TRAN HUNG DAO, HCM', '0843132203', 'CNTT')
+insert SINHVIEN(MSSV, Ten, PhaiNu, DiaChi, DienThoai, MaKhoa)
+values ('SV003', N'Nguyễn Thành Long', 0, N'223 TRAN HUNG DAO, HCM', '0843132203', 'TOAN')
+insert SINHVIEN(MSSV, Ten, PhaiNu, DiaChi, DienThoai, MaKhoa)
+values ('SV004', N'Hoàng Thị Hoa', 1, N'223 TRAN HUNG DAO, HCM', '0843132203', 'CNTT')
+insert SINHVIEN(MSSV, Ten, PhaiNu, DiaChi, DienThoai, MaKhoa)
+values ('SV005', N'Trần Hồng Sơn', 0, N'223 TRAN HUNG DAO, HCM', '0843132203', 'TOAN')
+
+go
+/***************GIAOVIEN *******************/
+insert GIAOVIEN(MaGV, TenGV, MaKhoa)
+values ('GV01', 'PHAN THI THAO', 'CNTT')
+insert GIAOVIEN(MaGV, TenGV, MaKhoa)
+values ('GV02', 'LAM HAONG VU', 'TOAN')
+insert GIAOVIEN(MaGV, TenGV, MaKhoa)
+values ('GV03', 'TRAN VAN TIEN', 'CNTT')
+insert GIAOVIEN(MaGV, TenGV, MaKhoa)
+values ('GV04', 'HOANG VUONG', 'CNTT')
+
+go
+/***************MONHOC *******************/
+
+insert MONHOC(MaMH, TenMH, SoTC)
+values ('CSDL', 'CO SO DU LIEU', 3)
+insert MONHOC(MaMH, TenMH, SoTC)
+values ('CTDL', 'CAU TRUC DU LIEU', 4)
+insert MONHOC(MaMH, TenMH, SoTC)
+values ('KTLT', 'KY THUAT LAP TRINH', 5)
+insert MONHOC(MaMH, TenMH, SoTC)
+values ('CWIN', 'LAP TRINH C TREN WINDOW', 4)
+
+go
+/***************GIANGDAY *******************/
+insert GIANGDAY(MaKhoaHoc, MaGV, MaMH, HocKy, Nam)
+values ('K1', 'GV01', 'CSDL', 1, 2001)
+insert GIANGDAY(MaKhoaHoc, MaGV, MaMH, HocKy, Nam)
+values ('K2', 'GV04', 'KTLT', 2, 2001)
+insert GIANGDAY(MaKhoaHoc, MaGV, MaMH, HocKy, Nam)
+values ('K3', 'GV03', 'CTDL', 1, 2002)
+insert GIANGDAY(MaKhoaHoc, MaGV, MaMH, HocKy, Nam)
+values ('K4', 'GV04', 'CWIN', 1, 2002)
+insert GIANGDAY(MaKhoaHoc, MaGV, MaMH, HocKy, Nam)
+values ('K5', 'GV01', 'CSDL', 1, 2002)
+
+go
+/***************KETQUA *******************/
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV001', 'K1', 8.5)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV002', 'K3', 7.0)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV003', 'K4', 7.5)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV001', 'K2', 9.0)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV004', 'K3', 6.0)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV005', 'K3', 7.0)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV002', 'K1', 7.0)
+insert KETQUA(MaSV, MaKhoaHoc, Diem)
+values ('SV003', 'K2', 8.5)

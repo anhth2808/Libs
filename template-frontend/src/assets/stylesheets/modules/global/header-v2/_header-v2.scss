@@ -1,0 +1,106 @@
+#header {
+  @include position(fixed, 0, 0, null, 0, 9999);
+  box-shadow: 0 2px 4px 0 rgba(197, 208, 222, .27);
+  background: $white;
+
+  .search-in-menu {
+    .search-form {
+      width: 100%;
+    }
+
+    .search {
+      min-height: 100px;
+    }
+
+    .col-left {
+      width: 100%;
+    }
+
+    input {
+      border: none;
+      @include sizeEx(100%, auto);
+
+      &::placeholder {
+        color: $gray-500;
+      }
+    }
+
+    .icon-close-cus {
+      display: block;
+      @include sizeEx(30px);
+      padding-top: 16px;
+      cursor: pointer;
+      color: $gray-500;
+
+      &:hover {
+        span {
+          background: $blue;
+        }
+      }
+
+      span {
+        position: relative;
+        @include sizeEx(30px, 2px);
+        background: $gray-500;
+        display: block;
+
+        &:first-child {
+          transform: rotate(45deg);
+          top: 0;
+          left: 2px;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          top: -2px;
+          left: 2px;
+        }
+      }
+    }
+  }
+}
+
+.sub-menu {
+  ul {
+    padding: 0;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  > ul > li {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 45px;
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#header-logo {
+  width: 100%;
+  max-width: 200px;
+}
+
+@include media-breakpoint-down(lg) {
+
+  html.is-open-menu,
+  html.is-open-menu body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  html.is-open-menu {
+    body {
+      @include position(absolute, 0, 0, null, 0, null);
+    }
+
+    #header {
+      height: 100vh;
+      bottom: 0;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+---
+author: Frontend Team
+ourTeam: My Team
+---
+{% extends 'layouts/application.html' %}{% block bodyClass %}page-internal{% endblock %}
+{% block content %}
+<main id="main-content" class="main-content">
+  <div class="space-100"></div>
+  <div class="container">
+    <h1>{{ author }} {{ ourTeam }}</h1>
+    <h2>Headline style h2 </h2>
+    <h3>Headline <a href="#">style H3</a></h3>
+    <h4>Headline style H4</h4>
+    <h5>Headline style H5</h5>
+    <h6>Headline style H6</h6>
+    <ul>
+      <li>provide specific training and certifications to tower
+        <a href="#">climbers and managers in the field</a>
+      </li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+    </ul>
+    <ol>
+      <li>provide specific training and certifications to tower
+        <a href="#">climbers and managers in the field</a>
+      </li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      <li>provide specific training and certifications to tower climbers and managers in the field</li>
+    </ol>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy
+      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+      book.
+      It has survived not only five centuries
+    </p>
+
+    <div class="bg-primary text-white p-4 last-mb-none">
+      <h2 class="h1">{{ author }} {{ ourTeam }}</h2>
+      <h2>Headline style h2 </h2>
+      <h3>Headline <a href="#">style H3</a></h3>
+      <h4>Headline style H4</h4>
+      <h5>Headline style H5</h5>
+      <h6>Headline style H6</h6>
+      <ul>
+        <li>provide specific training and certifications to tower
+          <a href="#">climbers and managers in the field</a>
+        </li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      </ul>
+      <ol>
+        <li>provide specific training and certifications to tower
+          <a href="#">climbers and managers in the field</a>
+        </li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        <li>provide specific training and certifications to tower climbers and managers in the field</li>
+      </ol>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy
+        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+        specimen
+        book. It has survived not only five centuries
+      </p>
+    </div>
+    <div class="space-50"></div>
+    <div class="social">
+      {% include "modules/global/social.html" %}
+    </div>
+
+    <p>
+      <a href="#" class="btn btn-primary">Default Large CTA</a>
+    </p>
+    <p>
+      <a href="#" class="btn btn-outline-primary">Default Large CTA</a>
+    </p>
+    <br>
+    <h3>Custom select js</h3>
+    {% include "modules/select-c8.html" %}
+    <div class="row">
+      <div class="col-md-6 form-ani">
+        <div class="form-group">
+          <label for="default-tex1">Field Title</label>
+          <input type="text" class="form-control" id="default-tex1" placeholder="Default Field">
+        </div>
+        <div class="form-group form-group-v2">
+          <div class="form-inner">
+            <label for="default-tex2" class="label-animation">Animation</label>
+            <input type="text" id="default-tex2" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-radio form-group">
+      <input type="radio" id="radio1" class="c-radio" name="radios3">
+      <label for="radio1">
+        <span class="box"></span> My Local Location
+      </label>
+    </div>
+    <div class="c-radio form-group">
+      <input type="radio" checked id="radio2" class="c-radio" name="radios3">
+      <label for="radio2">
+        <span class="box"></span> My Local Location
+      </label>
+    </div>
+
+
+    <div class="space-30"></div>
+    <img data-src="assets/images/banner-denver.jpg" src="{{imagesBase64}}" alt="img" class="lazy">
+  </div>
+
+</main>
+{% endblock %}

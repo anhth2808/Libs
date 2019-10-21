@@ -79,3 +79,10 @@ Mà thẻ FE gì đó cách đây 2 3 năm, có người của công ty họ đ�
 Sau mình tìm hiểu thì có lên trang web của Fe là https://fecredit.com.vn thì không thấy thông tin gì về hợp đồng vay vốn của mình cả. Đọc tin nhắn trên điện thoại của ba thì lò ra trang card.fecredit.com.vn thì mình mới thấy thông tin sao kê về thẻ gì đó.
 Gia đình mình đã đóng được 1 tháng là 1tr3 ( lúc đó tin nhắn điện thoại ba mình ghi là đóng it nhất là  802,115 ngàn để tiếp tục sử dụng thẻ ). Mà mục "Tổng Khoản Thanh Toán Tối Thiểu" của nó trên trang web trùng với số 802,115. Xong qua tháng thì mình thấy con số "Tổng Khoản Thanh Toán Tối Thiểu" tăng thành 1,348,104. Trong sao kê lúc đầu ghi 1 khoản phí "lai suat" là 247,115, sang sao kê tháng tiếp theo thì nó là 852,287.
 Mình thật sự không biết gia đình mình đang phải trả số nợ là bao nhiêu? Điều này làm mình rất hoang mang. Không biết đây có phải chỉ là rút tiền từ thẻ FE. Chỉ cần đóng đủ "Tổng Dư Nợ" là 25,643,165 là có thể kết thúc hay phải đóng đủ 24 tháng như hợp đồng miệng của người nói điện thoại với Ba mình ?
+
+
+
+C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\CodeBlocks\MinGW\bin
+
+
+-static-lpthread

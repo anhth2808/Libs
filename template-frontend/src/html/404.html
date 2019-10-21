@@ -1,0 +1,20 @@
+{% extends 'layouts/application.html' %}
+{% block htmlClass %}h-100{% endblock %}
+{% block bodyClass %}page-internal d-flex h-100{% endblock %}
+{% block wrapperClass %}d-flex w-100 h-100 flex-column{% endblock %}
+{% block content %}
+<main id="main-content" class="main-content">
+  <div class="space-40"></div>
+  <section id="mod-404" class="mod-404 text-center">
+    <div class="container last-mb-none">
+      <h1>404</h1>
+      <p>Page not found</p>
+      <h4>Please try one of the following pages:</h4>
+      <p>
+        <a href="index.html" title="Back to home" class="btn btn-primary">Back to home</a>
+      </p>
+    </div>
+  </section>
+  <div class="space-40"></div>
+</main>
+{% endblock %}

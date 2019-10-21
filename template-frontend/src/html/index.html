@@ -1,0 +1,24 @@
+---
+author: Frontend Team
+ourTeam: My Team
+---
+{% extends 'layouts/application.html' %}
+{% block bodyClass %}page-home{% endblock %}
+{% block content %}
+<main id="main-content" class="main-content">
+  <div class="container">
+  
+    <h1>{{ author }} {{ ourTeam }}</h1>
+    <h2>Headline style h2 </h2>
+    <h3>Headline <a href="#">style H3</a></h3>
+    <h4>Headline style H4</h4>
+    <h5>Headline style H5</h5>
+    <h6>Headline style H6</h6>
+    <p>
+      <img class="lazy img-svg" data-src="assets/images/logo.svg" src="{{imagesBase64}}" alt="image">
+    </p>
+    {% include "modules/mod-test.html" %}
+  </div>
+  <div class="space-50"></div>
+</main>
+{% endblock %}
