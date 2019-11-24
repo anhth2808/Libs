@@ -86,3 +86,20 @@ C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRo
 
 
 -static-lpthread
+
+
+
+
+
+
+
+fontendchecklist.io
+
+
+
+
+
+ALTER TABLE THOIKHOABIEU DROP CONSTRAINT PK_THOIKHOABIEU
+ALTER TABLE THOIKHOABIEU ADD CONSTRAINT PK_THOIKHOABIEU PRIMARY KEY(MANHP, MAPHONG, THU, MATH)
+
+
