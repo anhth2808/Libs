@@ -1,0 +1,3 @@
+khach,que,tien
+Anh,Hue,1000
+lan,Da Nang,2000
