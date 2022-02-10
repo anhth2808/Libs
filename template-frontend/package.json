@@ -82,7 +82,7 @@
     "lodash": "^4.17.5",
     "map-stream": "^0.0.7",
     "masonry-layout": "^4.2.2",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "node-sass-glob-importer": "^5.1.0",
     "nunjucks": "^3.0.1",
     "nunjucks-capture": "^1.0.4",
